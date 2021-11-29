@@ -2,7 +2,7 @@ name: CI Workflow
 on: [push]
 jobs:
   build-and-test:
-    name: Build and run tests
+    name: Build and run test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout current repository in ubuntu's file system
@@ -13,3 +13,6 @@ jobs:
           java-version: 1.8
       - name: Print contents in current directory
         run: ls -la
+      - name: Unit tests
+        run: ./gradlew testDebugUnitTest
+
